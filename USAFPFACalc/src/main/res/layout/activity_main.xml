@@ -1,0 +1,319 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context=".MainActivity">
+    <!--android:paddingTop="@dimen/activity_vertical_margin"-->
+    <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fillViewport="true">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:id="@+id/tableLayout">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/Gender"
+                    android:id="@+id/GenderText"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical|right" />
+
+                <Spinner
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/GenderSpinner"
+                    android:layout_column="1"
+                    android:spinnerMode="dropdown"
+                    style="@style/AppTheme"
+                    android:layout_gravity="center"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:id="@+id/genderImageView"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_empty" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/Age"
+                    android:id="@+id/AgeText"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical|right" />
+
+                <Spinner
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/AgeSpinner"
+                    android:layout_column="1"
+                    android:spinnerMode="dropdown"
+                    style="@style/AppTheme"
+                    android:gravity="center"
+                    android:layout_gravity="center" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:id="@+id/ageImageView"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_empty" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/Altitude"
+                    android:id="@+id/AltitudeText"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical|right" />
+
+                <Spinner
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/AltitudeSpinner"
+                    android:layout_column="1"
+                    android:spinnerMode="dropdown"
+                    style="@style/AppTheme"
+                    android:gravity="center"
+                    android:layout_gravity="center" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:id="@+id/altitudeImageView"
+                    android:src="@drawable/ic_empty"
+                    android:padding="5dp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/WaistSize"
+                    android:id="@+id/WaistSizeText"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical|right" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/WaistSizeTextInput"
+                    android:maxLength="4"
+                    android:numeric="integer|decimal"
+                    android:editable="true"
+                    android:text="00"
+                    android:gravity="center"
+                    android:width="75dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:id="@+id/waistSizeImageView"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_empty" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/PushUps"
+                    android:id="@+id/PushUpsText"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical|right" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/PushupsTextInput"
+                    android:maxLength="3"
+                    android:numeric="integer"
+                    android:editable="true"
+                    android:text="00"
+                    android:gravity="center"
+                    android:width="75dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:id="@+id/pushupsImageView"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_empty" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/SitUps"
+                    android:id="@+id/SitUpsText"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical|right" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/SitupsTextInput"
+                    android:maxLength="3"
+                    android:numeric="integer"
+                    android:editable="true"
+                    android:text="00"
+                    android:gravity="center"
+                    android:width="75dp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:id="@+id/situpsImageView"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_empty" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/RunTime"
+                    android:id="@+id/RunTimeText"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical|right" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:ems="10"
+                        android:id="@+id/RunMinutesTextInput"
+                        android:maxLength="2"
+                        android:numeric="integer"
+                        android:editable="true"
+                        android:text="00"
+                        android:gravity="center"
+                        android:width="75dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text=":"
+                        android:id="@+id/textView"
+                        android:layout_gravity="center" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:id="@+id/RunSecondsTextInput"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:numeric="integer"
+                        android:editable="true"
+                        android:text="00"
+                        android:gravity="center"
+                        android:width="75dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:id="@+id/runTimeImageView"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_empty" />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/Score"
+                    android:id="@+id/ScoreText"
+                    android:layout_column="0"
+                    android:layout_gravity="center_vertical|right" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/ScoreDisplayText"
+                    android:layout_column="1"
+                    android:layout_gravity="center"
+                    android:textSize="64dp"
+                    android:text="100" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:id="@+id/scoreImageView"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_empty" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+</RelativeLayout>
+
+
