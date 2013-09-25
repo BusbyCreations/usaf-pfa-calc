@@ -10,6 +10,11 @@ public class WaistSizeEditTextWatcher implements TextWatcher {
 
     MainActivity mainActivity;
 
+    public WaistSizeEditTextWatcher(MainActivity mainActivity) {
+        super();
+        this.mainActivity = mainActivity;
+    }
+
     public void onTextChanged(CharSequence sequence, int start, int before, int count) {
 
     }

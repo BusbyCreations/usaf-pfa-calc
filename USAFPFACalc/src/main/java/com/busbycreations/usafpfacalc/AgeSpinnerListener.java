@@ -10,6 +10,11 @@ public class AgeSpinnerListener implements AdapterView.OnItemSelectedListener {
 
     public MainActivity mainActivity;
 
+    public AgeSpinnerListener(MainActivity mainActivity) {
+        super();
+        this.mainActivity = mainActivity;
+    }
+
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 //        parent.getItemAtPosition(pos);
 

@@ -10,6 +10,11 @@ public class PushupsEditTextWatcher implements TextWatcher {
 
     MainActivity mainActivity;
 
+    public PushupsEditTextWatcher(MainActivity mainActivity) {
+        super();
+        this.mainActivity = mainActivity;
+    }
+
     public void onTextChanged(CharSequence sequence, int start, int before, int count) {
 
     }

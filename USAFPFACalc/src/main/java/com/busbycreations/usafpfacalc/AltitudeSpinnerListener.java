@@ -10,6 +10,11 @@ public class AltitudeSpinnerListener implements AdapterView.OnItemSelectedListen
 
     public MainActivity mainActivity;
 
+    public AltitudeSpinnerListener(MainActivity mainActivity) {
+        super();
+        this.mainActivity = mainActivity;
+    }
+
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 //        parent.getItemAtPosition(pos);
 

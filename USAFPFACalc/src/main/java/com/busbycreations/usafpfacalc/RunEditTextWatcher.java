@@ -10,6 +10,11 @@ public class RunEditTextWatcher implements TextWatcher {
 
     MainActivity mainActivity;
 
+    public RunEditTextWatcher(MainActivity mainActivity) {
+        super();
+        this.mainActivity = mainActivity;
+    }
+
     public void onTextChanged(CharSequence sequence, int start, int before, int count) {
 
     }

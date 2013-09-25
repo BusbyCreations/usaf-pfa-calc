@@ -10,6 +10,11 @@ public class SitupsEditTextWatcher implements TextWatcher {
 
     MainActivity mainActivity;
 
+    public SitupsEditTextWatcher(MainActivity mainActivity) {
+        super();
+        this.mainActivity = mainActivity;
+    }
+
     public void onTextChanged(CharSequence sequence, int start, int before, int count) {
 
     }

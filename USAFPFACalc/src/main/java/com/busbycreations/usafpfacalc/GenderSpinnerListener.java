@@ -10,6 +10,11 @@ public class GenderSpinnerListener implements AdapterView.OnItemSelectedListener
 
     public MainActivity mainActivity;
 
+    public GenderSpinnerListener(MainActivity mainActivity) {
+        super();
+        this.mainActivity = mainActivity;
+    }
+
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 //        parent.getItemAtPosition(pos);
 

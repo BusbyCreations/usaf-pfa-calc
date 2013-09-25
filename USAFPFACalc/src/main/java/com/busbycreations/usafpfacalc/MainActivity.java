@@ -1,13 +1,16 @@
 package com.busbycreations.usafpfacalc;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ShareActionProvider;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -15,12 +18,14 @@ public class MainActivity extends Activity {
 
     public static final String PREFS_NAME = "com.busbycreations.usafpfacalc.prefs";
 
+    // Licensing
+//    private BCLicense bcLicense;
+
     private ScoreCalculator scoreCalculator;
 
     private Spinner ageSpinner, genderSpinner, altitudeSpinner;
     private EditText waistSizeEditText, pushupsEditText, situpsEditText, runMinutesEditText, runSecondsEditText;
     private TextView scoreTextView;
-
     private ImageView waistImageView, pushupsImageView, situpsImageView, runImageView, scoreImageView;
 
     private GenderSpinnerListener genderSpinnerListener;
@@ -30,6 +35,8 @@ public class MainActivity extends Activity {
     private PushupsEditTextWatcher pushupsEditTextWatcher;
     private SitupsEditTextWatcher situpsEditTextWatcher;
     private RunEditTextWatcher runEditTextWatcher;
+
+    private ShareActionProvider shareActionProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +52,41 @@ public class MainActivity extends Activity {
         createSpinnerAdapters();
         addListeners();
         initializeInputs();
-        syncInputs();
+
+        // Licensing
+//        bcLicense = new BCLicense(this);
+//        bcLicense.checkLicensing();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
+        // share action
+        MenuItem menuItem = menu.findItem(R.id.action_share);
+        shareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
+
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.action_share:
+                // this case will never be called.
+                return true;
+//            case R.id.action_donate:
+//                return true;
+            case R.id.action_about:
+                // TODO: display an about dialog
+                return true;
+            case R.id.action_settings:
+                // TODO: display a settings activity
+                return true;
+            default:
+                return super.onOptionsItemSelected(menuItem);
+        }
     }
 
     @Override
@@ -73,6 +107,45 @@ public class MainActivity extends Activity {
         settingsEditor.putInt("runseconds", runSecondsEditText.length() > 0 ? Integer.parseInt(runSecondsEditText.getText().toString()) : 0 );
 
         settingsEditor.commit();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // Licensing
+//        bcLicense.onDestroy();
+    }
+
+    private Intent createShareIntent() {
+        int minutes = Integer.parseInt(runMinutesEditText.length() > 0 ? runMinutesEditText.getText().toString() : "0");
+        int seconds = Integer.parseInt(runSecondsEditText.length() > 0 ? runSecondsEditText.getText().toString() : "0");
+        String runTime = String.format("%1$1d:%2$02d", minutes, seconds);
+
+//        String percentFormat = "(%1$d%% max)%n";
+//        String waistPercent = String.format(percentFormat, Math.round(scoreCalculator.getWaistScore() * 100.));
+//        String pushupsPercent = String.format(percentFormat, Math.round(scoreCalculator.getPushupsScore() * 100.));
+//        String situpsPercent = String.format(percentFormat, Math.round(scoreCalculator.getSitupsScore() * 100.));
+//        String runPercent = String.format(percentFormat, Math.round(scoreCalculator.getRunScore() * 100.));
+
+        String textToShare = "I just scored " + scoreTextView.getText().toString()
+                + " on the Air Force Fitness Assessment: "
+                + waistSizeEditText.getText().toString() + " inch waist, "
+                + pushupsEditText.getText().toString() + " pushups, "
+                + situpsEditText.getText().toString() + " situps, and "
+                + runTime + " run time.";
+
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, textToShare);
+        shareIntent.setType("text/plain");
+        return shareIntent;
+    }
+
+    private void setShareIntent(Intent shareIntent) {
+        if (shareActionProvider != null) {
+            shareActionProvider.setShareIntent(shareIntent);
+        }
     }
 
     private void createInputs() {
@@ -96,20 +169,13 @@ public class MainActivity extends Activity {
     }
 
     private void createListeners() {
-        genderSpinnerListener = new GenderSpinnerListener();
-        genderSpinnerListener.mainActivity = this;
-        ageSpinnerListener = new AgeSpinnerListener();
-        ageSpinnerListener.mainActivity = this;
-        altitudeSpinnerListener = new AltitudeSpinnerListener();
-        altitudeSpinnerListener.mainActivity = this;
-        waistSizeEditTextWatcher = new WaistSizeEditTextWatcher();
-        waistSizeEditTextWatcher.mainActivity = this;
-        pushupsEditTextWatcher = new PushupsEditTextWatcher();
-        pushupsEditTextWatcher.mainActivity = this;
-        situpsEditTextWatcher = new SitupsEditTextWatcher();
-        situpsEditTextWatcher.mainActivity = this;
-        runEditTextWatcher = new RunEditTextWatcher();
-        runEditTextWatcher.mainActivity = this;
+        genderSpinnerListener = new GenderSpinnerListener(this);
+        ageSpinnerListener = new AgeSpinnerListener(this);
+        altitudeSpinnerListener = new AltitudeSpinnerListener(this);
+        waistSizeEditTextWatcher = new WaistSizeEditTextWatcher(this);
+        pushupsEditTextWatcher = new PushupsEditTextWatcher(this);
+        situpsEditTextWatcher = new SitupsEditTextWatcher(this);
+        runEditTextWatcher = new RunEditTextWatcher(this);
     }
 
     private void createSpinnerAdapters() {
@@ -154,17 +220,6 @@ public class MainActivity extends Activity {
         // call these last, because it updates all the images, etc.
     }
 
-    private void syncInputs() {
-//        scoreCalculator.setGender(genderSpinner.getSelectedItemPosition());
-//        scoreCalculator.setAge(ageSpinner.getSelectedItemPosition());
-//        scoreCalculator.setAltitude(altitudeSpinner.getSelectedItemPosition());
-//        scoreCalculator.setWaist(Float.parseFloat(waistSizeEditText.getText().toString()));
-//        scoreCalculator.setPushups(Integer.parseInt(pushupsEditText.getText().toString()));
-//        scoreCalculator.setSitups(Integer.parseInt(situpsEditText.getText().toString()));
-//        scoreCalculator.setRun(Integer.parseInt(runMinutesEditText.getText().toString()),
-//                Integer.parseInt(runSecondsEditText.getText().toString()));
-    }
-
     private void displayScore(double score) {
         if (score > 99.999) scoreTextView.setTextColor(Color.BLUE);
         else if (score > 89.999) scoreTextView.setTextColor(Color.GREEN);
@@ -172,6 +227,7 @@ public class MainActivity extends Activity {
         else scoreTextView.setTextColor(Color.RED);
         scoreTextView.setText(String.format("%1$.1f", score));
         displayScoreRepresentation(score / 100.0, scoreImageView);
+        setShareIntent(createShareIntent());
     }
 
     // Methods for the listeners to use:
