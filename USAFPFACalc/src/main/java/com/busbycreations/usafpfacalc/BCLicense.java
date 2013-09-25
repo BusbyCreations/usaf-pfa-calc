@@ -7,8 +7,8 @@ import com.google.android.vending.licensing.ServerManagedPolicy;
 import android.os.Handler;
 import android.provider.Settings;
 
-/**
- * Created by mobusby on 9/24/13.
+/** Copyright (c) 2013 Mark O. Busby
+ *  Licensed under the MIT license (see LICENSE.txt)
  *
  * BCLicense - an implementation of Google Play Licensing.
  * It is intended to be customized directly to fit the needs of the application.

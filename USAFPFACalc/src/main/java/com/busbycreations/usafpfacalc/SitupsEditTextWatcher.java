@@ -3,9 +3,10 @@ package com.busbycreations.usafpfacalc;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/**
- * Created by mobusby on 9/20/13.
+/** Copyright (c) 2013 Mark O. Busby
+ *  Licensed under the MIT license (see LICENSE.txt)
  */
+
 public class SitupsEditTextWatcher implements TextWatcher {
 
     MainActivity mainActivity;

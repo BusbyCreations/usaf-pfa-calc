@@ -1,8 +1,9 @@
 package com.busbycreations.usafpfacalc;
 
-/**
- * Created by mobusby on 9/18/13.
+/** Copyright (c) 2013 Mark O. Busby
+ *  Licensed under the MIT license (see LICENSE.txt)
  */
+
 public class ScoreCalculator {
     private int gender, age, altitude, situps, pushups, run;
     private int ageIndex;

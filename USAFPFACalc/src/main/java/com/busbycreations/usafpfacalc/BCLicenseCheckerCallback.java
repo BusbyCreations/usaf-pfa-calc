@@ -5,8 +5,8 @@ import android.os.Handler;
 import com.google.android.vending.licensing.LicenseCheckerCallback;
 import com.google.android.vending.licensing.Policy;
 
-/**
- * Created by mobusby on 9/24/13.
+/** Copyright (c) 2013 Mark O. Busby
+ *  Licensed under the MIT license (see LICENSE.txt)
  *
  * BCLicenseCheckerCallback is part of BCLicense - an implementation of Google Play Licensing.
  * It is intended to be customized directly to fit the needs of the application.

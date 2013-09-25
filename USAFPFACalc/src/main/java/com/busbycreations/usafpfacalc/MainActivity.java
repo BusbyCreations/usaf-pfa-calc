@@ -1,5 +1,6 @@
 package com.busbycreations.usafpfacalc;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -13,6 +14,10 @@ import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+/** Copyright (c) 2013 Mark O. Busby
+ *  Licensed under the MIT license (see LICENSE.txt)
+ */
 
 public class MainActivity extends Activity {
 
@@ -79,14 +84,15 @@ public class MainActivity extends Activity {
 //            case R.id.action_donate:
 //                return true;
             case R.id.action_about:
-                // TODO: display an about dialog
+                showAbout();
                 return true;
             case R.id.action_settings:
-                // TODO: display a settings activity
+                showSettings();
                 return true;
-            default:
-                return super.onOptionsItemSelected(menuItem);
+//            default:
+//                return super.onOptionsItemSelected(menuItem);
         }
+        return true;
     }
 
     @Override
@@ -282,5 +288,15 @@ public class MainActivity extends Activity {
         displayScoreRepresentation(scoreCalculator.getSitupsScore(), situpsImageView);
         displayScoreRepresentation(scoreCalculator.getRunScore(), runImageView);
 //        displayScoreRepresentation(scoreCalculator.getScore(), scoreImageView);
+    }
+
+    private void showAbout() {
+        AboutDialogFragment aboutDialogFragment = new AboutDialogFragment();
+        FragmentManager fm = getFragmentManager();
+        aboutDialogFragment.show(fm, "about_dialog");
+    }
+
+    private void showSettings() {
+
     }
 }

@@ -1,8 +1,9 @@
 package com.busbycreations.usafpfacalc;
 
-/**
- * Created by mobusby on 9/19/13.
+/** Copyright (c) 2013 Mark O. Busby
+ *  Licensed under the MIT license (see LICENSE.txt)
  */
+
 public class ScoreChartPrivate {
 
     // pushups and situps tables

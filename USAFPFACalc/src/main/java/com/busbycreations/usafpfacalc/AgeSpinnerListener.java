@@ -3,9 +3,10 @@ package com.busbycreations.usafpfacalc;
 import android.view.View;
 import android.widget.AdapterView;
 
-/**
- * Created by mobusby on 9/18/13.
+/** Copyright (c) 2013 Mark O. Busby
+ *  Licensed under the MIT license (see LICENSE.txt)
  */
+
 public class AgeSpinnerListener implements AdapterView.OnItemSelectedListener {
 
     public MainActivity mainActivity;

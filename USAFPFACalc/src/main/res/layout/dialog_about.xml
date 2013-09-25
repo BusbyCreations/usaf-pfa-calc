@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright (c) 2013 Mark O. Busby
+     Licensed under the MIT license (see LICENSE.txt)
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5dp">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutDialogLogoImageView"
+        android:layout_alignParentStart="true"
+        android:focusableInTouchMode="false"
+        android:src="@drawable/busby_creations_logo3_with_name"
+        android:layout_gravity="center_horizontal|top"
+        android:cropToPadding="false"
+        android:adjustViewBounds="true"
+        android:background="#ffffff" />
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutDialogWebView"
+        android:focusableInTouchMode="false" />
+
+</LinearLayout>
