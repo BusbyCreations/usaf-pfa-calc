@@ -6,21 +6,22 @@
 
 <resources>
 
-    <string name="about_dialog_text">
-<![CDATA[
+    <string name="about_dialog_text"><![CDATA[
 <html>
 <body style="text-align:justify">
     You are using USAF PFA Calc - a simple, fast, easy to use utility for calculating scores for
     the United States Air Force Fitness Assessment.  I created this app because none of the other
     similar apps on the market suited my tastes.<br />
     <br />
-    If you want to know more about the Air Force Fitness Assessment, check out <a href="http://www.afpc.af.mil/affitnessprogram/">the official page</a>.<br />
+    If you want to know more about the Air Force Fitness Assessment, check out
+    <a href="http://www.afpc.af.mil/affitnessprogram/">the official page</a>.<br />
     <br />
-    USAF PFA Calc is licensed under the MIT licenseIf you want to see the code for this project, check it out on <a href="http://code.google.com/p/usaf-pfa-calc/">google code</a>.
+    USAF PFA Calc is licensed under the MIT license. If you want to see the code for this project,
+    check it out on <a href="http://code.google.com/p/usaf-pfa-calc/">google code</a>.<br />
     <br />
+    Copyright &copy; 2013 Mark O. Busby<br />
 </body>
 </html>
-]]>
-    </string>
+    ]]></string>
 
 </resources>

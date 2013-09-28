@@ -61,6 +61,12 @@ public class MainActivity extends Activity {
         // Licensing
 //        bcLicense = new BCLicense(this);
 //        bcLicense.checkLicensing();
+
+        // Get/Log the first run status, show the dialog as relevant
+        if (getSharedPreferences(PREFS_NAME, 0).getBoolean("firstrun", true)) {
+            getSharedPreferences(PREFS_NAME, 0).edit().putBoolean("firstrun", false).commit();
+            showFirstRun();
+        }
     }
 
     @Override
@@ -86,13 +92,12 @@ public class MainActivity extends Activity {
             case R.id.action_about:
                 showAbout();
                 return true;
-            case R.id.action_settings:
-                showSettings();
-                return true;
-//            default:
-//                return super.onOptionsItemSelected(menuItem);
+//            case R.id.action_settings:
+//                showSettings();
+//                return true;
+            default:
+                return super.onOptionsItemSelected(menuItem);
         }
-        return true;
     }
 
     @Override
@@ -292,11 +297,16 @@ public class MainActivity extends Activity {
 
     private void showAbout() {
         AboutDialogFragment aboutDialogFragment = new AboutDialogFragment();
-        FragmentManager fm = getFragmentManager();
-        aboutDialogFragment.show(fm, "about_dialog");
+        aboutDialogFragment.show(getFragmentManager(), "about_dialog");
     }
 
     private void showSettings() {
 
+    }
+
+    private void showFirstRun() {
+        FirstRunDialogFragment firstRunDialogFragment = new FirstRunDialogFragment();
+        FragmentManager fm = getFragmentManager();
+        firstRunDialogFragment.show(fm, "first_run_dialog");
     }
 }

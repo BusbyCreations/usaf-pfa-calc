@@ -45,4 +45,10 @@
 
     <string name="about_dialog_title">About this app</string>
 
+    <string name="first_run_dialog_title">How is your fitness?</string>
+    <string name="first_run_dialog_blue">Maximum points:</string>
+    <string name="first_run_dialog_green">At least 90%:</string>
+    <string name="first_run_dialog_orange">At least 75%:</string>
+    <string name="first_run_dialog_red">Failed:</string>
+
 </resources>

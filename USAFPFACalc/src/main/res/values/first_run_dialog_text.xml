@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright (c) 2013 Mark O. Busby
+     Licensed under the MIT license (see LICENSE.txt)
+-->
+
+<resources>
+
+    <string name="first_run_dialog_explanation"><![CDATA[
+<html>
+<body>
+    90 or better <i>overall</i> = Excellent<br />
+    Less than 75 <i>overall</i> = Fail<br />
+    Failure in any component = Failure overall<br />
+</body>
+</html>
+    ]]></string>
+
+</resources>
