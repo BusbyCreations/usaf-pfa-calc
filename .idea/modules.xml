@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/USAFPFACalc/USAFPFACalc.iml" filepath="$PROJECT_DIR$/USAFPFACalc/USAFPFACalc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/USAFPFACalcProject.iml" filepath="$PROJECT_DIR$/USAFPFACalcProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/USAF_PFA_Calc.iml" filepath="$PROJECT_DIR$/.idea/modules/USAF_PFA_Calc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/USAF_PFA_Calc.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/USAF_PFA_Calc.app.iml" />
     </modules>
   </component>
 </project>
-

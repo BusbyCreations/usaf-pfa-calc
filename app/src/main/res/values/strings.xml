@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright (c) 2013 Mark O. Busby
+     Licensed under the MIT license (see LICENSE.txt)
+-->
+
+<resources>
+
+    <string name="app_name">USAF PFA Calc</string>
+
+    <string name="action_share">Share</string>
+    <string name="action_donate">Donate</string>
+    <string name="action_about">About</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="Age">Age:</string>
+    <string name="Gender">Gender:</string>
+    <string name="Altitude">Altitude:</string>
+    <string name="PushUps">Push-ups:</string>
+    <string name="SitUps">Sit-ups:</string>
+    <string name="RunTime">Run Time:</string>
+    <string name="Score">Score:</string>
+
+    <string-array name="Ages">
+        <item>&lt;25</item>
+        <item>25&#8211;29</item>
+        <item>30&#8211;34</item>
+        <item>35&#8211;39</item>
+        <item>40&#8211;44</item>
+        <item>45&#8211;49</item>
+        <item>50&#8211;54</item>
+        <item>55&#8211;59</item>
+        <item>&#8805;60</item>
+    </string-array>
+
+    <string-array name="Genders">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="Altitudes">
+        <item>&lt;5250 ft</item>
+        <item>5250&#8211;5499 ft</item>
+        <item>5500&#8211;5999 ft</item>
+        <item>6000&#8211;6599 ft</item>
+        <item>&#8805;6600 ft</item>
+    </string-array>
+
+    <string name="about_dialog_title">About this app</string>
+
+    <string name="first_run_dialog_title">How is your fitness?</string>
+    <string name="first_run_dialog_blue">Maximum points:</string>
+    <string name="first_run_dialog_green">At least 90%:</string>
+    <string name="first_run_dialog_orange">At least 75%:</string>
+    <string name="first_run_dialog_red">Failed:</string>
+
+</resources>

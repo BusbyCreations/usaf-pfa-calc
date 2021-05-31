@@ -1,1 +1,2 @@
-include ':USAFPFACalc'
+rootProject.name = "USAF PFA Calc"
+include ':app'
